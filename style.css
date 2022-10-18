@@ -1,9 +1,15 @@
 :root {
-    --background-clr: #aac1ff;
+    --text-clr: #000;
     --background-clr: #fff;
+    --orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --ver-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
 }
 *, *::before, *::after {
     background: var(--background-clr);
+    color: var(--text-clr);
 }
 
 .attribution {
@@ -19,4 +25,5 @@
 }
 
 .card {
+    
 }
