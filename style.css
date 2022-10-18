@@ -1,0 +1,22 @@
+:root {
+    --background-clr: #aac1ff;
+    --background-clr: #fff;
+}
+*, *::before, *::after {
+    background: var(--background-clr);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.card-container {
+    display: flex;
+}
+
+.card {
+}
