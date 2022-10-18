@@ -1,23 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
 :root {
     --text-clr: #000;
-    --background-clr: #fff;
+    --background-clr: var(--very-light-gray);
     --orange: hsl(31, 77%, 52%);
     --dark-cyan: hsl(184, 100%, 22%);
-    --ver-dark-cyan: hsl(179, 100%, 13%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
     --transparent-white: hsla(0, 0%, 100%, 0.75);
     --very-light-gray: hsl(0, 0%, 95%);
 }
 *, *::before, *::after {
     background: var(--background-clr);
     color: var(--text-clr);
+    font-size: 15px;
+    font-family: "Lexend Deca";
+    padding: 0;
+    margin: 0;
 }
 
 .attribution {
-    font-size: 11px;
+    --background-clr: var(--transparent-white);
+    font-size: 0.9em;
     text-align: center;
+    position: fixed;
+    bottom: 0;
 }
 .attribution a {
+    --background-clr: transparent;
     color: hsl(228, 45%, 44%);
+}
+
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .card-container {
@@ -25,5 +46,117 @@
 }
 
 .card {
+    --background-clr: #ccc;
+    width: 22em;
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 4em;
+    gap: 2em;
+}
+
+.button {
+    --background-clr: var(--very-light-gray);
+    background: var(--background-clr);
+    width: max-content;
+    padding: 1em 2em;
+    border-radius: 2em;
+    text-decoration: none;
+    transition: all 250ms ease-in-out;
+    margin-top: auto;
+}
+
+.button:hover, .button:focus {
+    --background-clr: transparent;
+    --text-clr: var(--transparent-white);
+    box-shadow: 0 0 0 2px var(--very-light-gray);
+}
+
+.text-orange {
+    --text-clr: var(--orange);
+}
+.text-dark-cyan {
+    --text-clr: var(--dark-cyan);
+}
+.text-very-dark-cyan {
+    --text-clr: var(--very-dark-cyan);
+}
+.bg-orange {
+    --background-clr: var(--orange);
+}
+.bg-dark-cyan {
+    --background-clr: var(--dark-cyan);
+}
+.bg-very-dark-cyan {
+    --background-clr: var(--very-dark-cyan);
+}
+
+.title {
+    font-family: "Big Shoulders Display";
+    font-size: 3em;
+    color: var(--very-light-gray);
+}
+
+.text {
+    color: var(--transparent-white);
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3em;
+    width: 4em;
+}
+
+.icon.sedan {
+    background-image: url('images/icon-sedans.svg');
+}
+.icon.suv {
+    background-image: url('images/icon-suvs.svg');
+}
+.icon.luxury {
+    background-image: url('images/icon-luxury.svg');
+}
+
+.card:first-child {
+    border-radius: 1em 0 0 1em;
+}
+.card:last-child {
+    border-radius: 0 1em 1em 0;
+}
+
+@media only screen and (max-width: 1010px) {
+    body {
+        overflow-y: scroll;
+        justify-content: flex-start;
+    }
+    .card-container {
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2em;
+        padding-bottom: 3em;
+    }
+    .card {
+        width: 100%;
+        height: fit-content;
+    }
+    .card:first-child {
+        border-radius: 1em 1em 0 0;
+    }
+    .card:last-child {
+        border-radius: 0 0 1em 1em;
+    }
     
+}
+
+@media only screen and (max-width: 300px) {
+    *, *::before, *::after {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 190px) {
+    *, *::before, *::after {
+        font-size: 7px;
+    }
 }
